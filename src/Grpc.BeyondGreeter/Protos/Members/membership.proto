@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc.BeyondGreeter.Members";
+
+package membership;
+
+// The greeting service definition.
+service Membership {
+  rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
+}
+
+message CreateProfileRequest {
+  string Email = 1;
+  string FirstName = 2;
+  string LastName = 3;
+  optional int32 Age = 4;
+  bool AcceptedTerms = 5;
+}
+
+message CreateProfileResponse{
+  string Id = 1;
+}

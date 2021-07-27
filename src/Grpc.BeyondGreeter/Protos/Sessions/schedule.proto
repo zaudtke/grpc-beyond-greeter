@@ -1,0 +1,24 @@
+﻿syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+option csharp_namespace = "Grpc.BeyondGreeter.Sessions";
+
+package schedule;
+
+service ScheduleService {
+  rpc ScheduleSession(ScheduleSessionRequest) returns (ScheduleSessionResponse);
+}
+
+
+message ScheduleSessionRequest{
+  string SessionId = 1;
+  google.protobuf.Timestamp Date = 2;
+  google.protobuf.Duration Duration = 3;
+}
+
+message ScheduleSessionResponse{
+  string SessionId = 1;
+  google.protobuf.Timestamp Date = 2;
+  google.protobuf.Duration Duration = 3;
+  string RoomName = 4;
+}

@@ -1,0 +1,83 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+option csharp_namespace = "Grpc.BeyondGreeter.Greetings";
+package greet;
+
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+  rpc SayHelloDefaults(HelloDefaultsRequest) returns (HelloDefaultsResponse);
+  rpc SayHelloNullables(HelloNullablesRequest) returns (HelloNullablesResponse);
+  rpc SayHelloOptionals(HelloOptionalsRequest) returns (HelloOptionalsResponse);
+  rpc SayHelloNested(HelloNestedRequest) returns (HelloNestedResponse);
+}
+
+// Out of Box File New Generated Messages
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+
+// Scalars - Uses Default Values
+message HelloDefaultsRequest {
+  string Name = 1;
+  int32 Age = 2;
+  bool AcceptedTerms = 3;
+}
+
+message HelloDefaultsResponse {
+  string Name = 1;
+  int32 Age = 2;
+  bool AcceptedTerms = 3;
+}
+
+// Nullable Scalars
+message HelloNullablesRequest {
+  google.protobuf.StringValue Name = 1;
+  google.protobuf.Int32Value Age = 2;
+  google.protobuf.BoolValue AcceptedTerms = 3;
+}
+
+message HelloNullablesResponse {
+  google.protobuf.StringValue Name = 1;
+  google.protobuf.Int32Value Age = 2;
+  google.protobuf.BoolValue AcceptedTerms = 3;
+}
+
+// Optional Scalars 3.15+
+message HelloOptionalsRequest {
+  optional string Name = 1;
+  optional int32 Age = 2;
+  optional bool AcceptedTerms = 3;
+}
+
+message HelloOptionalsResponse {
+  optional string Name = 1;
+  optional int32 Age = 2;
+  optional bool AcceptedTerms = 3;
+}
+
+//Nested Objects
+
+message Name {
+  string FirstName = 1;
+  string LastName = 2;
+}
+message HelloNestedRequest
+{
+  string Id = 1;
+  Name Name = 2;
+}
+
+message HelloNestedResponse
+{
+  string Id = 1;
+  Name Name = 2;
+}
+
