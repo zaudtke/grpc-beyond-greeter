@@ -19,25 +19,19 @@ namespace Grpc.BeyondGreeter.UnitTest.Testing
             GrpcChannel =
                 GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions {HttpClient = httpClient});
         }
-
-        protected override IHostBuilder CreateHostBuilder()
+        
+        protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
-            var builder = base.CreateHostBuilder();
             builder.UseEnvironment("Test")
                 .ConfigureLogging(logging =>
                 {
                     logging.ClearProviders();
                     logging.AddProvider(NullLoggerProvider.Instance);
                 });
-            
-            return builder;
-        }
-
-        protected override void ConfigureWebHost(IWebHostBuilder builder)
-        {
             // App Config
             // Services
             // in memory db
+
         }
     }
 }

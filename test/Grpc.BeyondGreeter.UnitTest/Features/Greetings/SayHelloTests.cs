@@ -12,11 +12,11 @@ using Xunit;
 
 namespace Grpc.BeyondGreeter.UnitTest.Features.Greetings
 {
-    public class SayHelloTests : IClassFixture<TestEnvironmentFixture<Startup>>
+    public class SayHelloTests : IClassFixture<TestEnvironmentFixture<Program>>
     {
-        private readonly TestEnvironmentFixture<Startup> _fixture;
+        private readonly TestEnvironmentFixture<Program> _fixture;
 
-        public SayHelloTests(TestEnvironmentFixture<Startup> fixture)
+        public SayHelloTests(TestEnvironmentFixture<Program> fixture)
         {
             _fixture = fixture;
         }

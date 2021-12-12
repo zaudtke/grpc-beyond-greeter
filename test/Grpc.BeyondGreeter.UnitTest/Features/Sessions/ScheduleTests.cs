@@ -7,11 +7,11 @@ using Xunit;
 
 namespace Grpc.BeyondGreeter.UnitTest.Features.Sessions
 {
-    public class ScheduleTests : IClassFixture<TestEnvironmentFixture<Startup>>
+    public class ScheduleTests : IClassFixture<TestEnvironmentFixture<Program>>
     {
-        private readonly TestEnvironmentFixture<Startup> _fixture;
+        private readonly TestEnvironmentFixture<Program> _fixture;
 
-        public ScheduleTests(TestEnvironmentFixture<Startup> fixture)
+        public ScheduleTests(TestEnvironmentFixture<Program> fixture)
         {
             _fixture = fixture;
         }

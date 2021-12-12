@@ -6,11 +6,11 @@ using Xunit;
 
 namespace Grpc.BeyondGreeter.UnitTest.Features.Members
 {
-    public class CreateProfileTests : IClassFixture<TestEnvironmentFixture<Startup>>
+    public class CreateProfileTests : IClassFixture<TestEnvironmentFixture<Program>>
     {
-        private readonly TestEnvironmentFixture<Startup> _fixture;
+        private readonly TestEnvironmentFixture<Program> _fixture;
 
-        public CreateProfileTests(TestEnvironmentFixture<Startup> fixture)
+        public CreateProfileTests(TestEnvironmentFixture<Program> fixture)
         {
             _fixture = fixture;
         }
