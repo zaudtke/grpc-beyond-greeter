@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace Grpc.BeyondGreeter.UnitTest.Testing
-{
-    public class ExpectedTestException : Exception
-    {
-        public const string ExpectedMessage = "This is an expected exception";
+namespace Grpc.BeyondGreeter.UnitTest.Testing;
 
-        public ExpectedTestException() : base(ExpectedMessage)
-        {
-        }
+public class ExpectedTestException : Exception
+{
+    public const string ExpectedMessage = "This is an expected exception";
+
+    public ExpectedTestException() : base(ExpectedMessage)
+    {
     }
 }
